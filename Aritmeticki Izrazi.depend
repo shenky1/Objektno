@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1494268663 source:c:\users\matija\cpp\aritmeticki izrazi\expression.cpp
+	"Expression.h"
+	<sstream>
+	<iterator>
+	<iostream>
+	<string>
+	<math.h>
+	<stdexcept>
+	<algorithm>
+	<functional>
+	<cctype>
+	<locale>
+
+1494267299 c:\users\matija\cpp\aritmeticki izrazi\expression.h
+	<string>
+	<vector>
+	<istream>
+
+1494268798 source:c:\users\matija\cpp\aritmeticki izrazi\main.cpp
+	<iostream>
+	"Expression.h"
+
