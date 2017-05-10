@@ -75,5 +75,7 @@ private:
     void transform();
     // Daje sljedeći token sadržan u ulaznom nizu
     Token getToken();
+
+    void printTokens(std::list<Token> li);
 };
 #endif

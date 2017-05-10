@@ -28,7 +28,7 @@ Transform::Token::Token(std::string str) {
     switch(str[0]){
         case '~':
             symbol = str[0];
-            priority = 4;
+            priority = 3;
             type = unaryOp;
             break;
         case '(':
@@ -39,7 +39,7 @@ Transform::Token::Token(std::string str) {
         case ')':
             symbol = str[0];
             type = rightParen;
-            priority = 3;
+            priority = 4;
             break;
         case '=':
             symbol = str[0];
@@ -86,7 +86,7 @@ Transform::Token Transform::getToken() {
     if(spaceIndex != -1) {
         std::string nextToken = getText().substr(0, spaceIndex);
         mText = mText.substr(spaceIndex + 1, mText.size());
-        std::cout << mText << std::endl;
+        //std::cout << mText << std::endl;
         Transform::Token token(nextToken);
         return token;
     } else {
@@ -126,6 +126,8 @@ list<Transform::Token> Transform::Convert(){
         else if(t.getPriority()==3){
             mDelayOps.push(t);
         }
+
+    printTokens(output);
     }
     while(!mDelayOps.empty()){
         try {
@@ -152,12 +154,20 @@ string Transform::getOutput(){
 }
 
 void Transform::print_postfix(std::ostream & o){
-    cout << "printing POSTORDER: ";
+    o << "printing POSTORDER: ";
     for(list<Token>::iterator it = mOutput.begin(); it!=mOutput.end(); ++it){
+        if(it->getType()==operand) o << it->getValue();
+        else o << it->getSymbol();
+    }
+    cout << endl;
+}
+
+void Transform::printTokens(list<Token> li){
+    cout << endl << "Output current state: ";
+    for(list<Token>::iterator it = li.begin(); it!=li.end(); ++it){
         if(it->getType()==operand) cout << it->getValue();
         else cout << it->getSymbol();
     }
-    cout << endl;
 }
 
 // trim from start
