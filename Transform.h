@@ -58,6 +58,8 @@ public:
 
     std::string getText(){return mText;}
 
+    std::string getOutput();
+
 private:
     // Ulazni string sa infix izrazom
     std::string mText;

@@ -69,3 +69,64 @@
 	<stack>
 	<list>
 
+1494422973 source:c:\users\fspigel\desktop\cb stuff\temp obj zad\objektno\expression.cpp
+	"Expression.h"
+	<sstream>
+	<iterator>
+	<iostream>
+	<string>
+	<math.h>
+	<stdexcept>
+	<algorithm>
+	<functional>
+	<cctype>
+	<locale>
+
+1494422973 c:\users\fspigel\desktop\cb stuff\temp obj zad\objektno\expression.h
+	<string>
+	<vector>
+	<istream>
+
+1494422973 source:c:\users\fspigel\desktop\cb stuff\temp obj zad\objektno\ipexpression.cpp
+	"IPExpression.h"
+	<sstream>
+	<iterator>
+	<iostream>
+	<string>
+	<math.h>
+	<stdexcept>
+	<algorithm>
+	<functional>
+	<cctype>
+	<locale>
+
+1494422973 c:\users\fspigel\desktop\cb stuff\temp obj zad\objektno\ipexpression.h
+	<string>
+	<vector>
+	<istream>
+	<stack>
+
+1494428442 source:c:\users\fspigel\desktop\cb stuff\temp obj zad\objektno\main.cpp
+	<iostream>
+	"Expression.h"
+	"IPExpression.h"
+	"Transform.h"
+
+1494428321 c:\users\fspigel\desktop\cb stuff\temp obj zad\objektno\transform.h
+	<string>
+	<stack>
+	<list>
+
+1494429006 source:c:\users\fspigel\desktop\cb stuff\temp obj zad\objektno\transform.cpp
+	"Transform.h"
+	<sstream>
+	<iterator>
+	<iostream>
+	<string>
+	<math.h>
+	<stdexcept>
+	<algorithm>
+	<functional>
+	<cctype>
+	<locale>
+

@@ -15,8 +15,10 @@ int main()
     IPExpression ipexp1(expr);
     cout  << expr  << " = "  << ipexp1.evaluate()  << endl;
 
-    expr = "2 + 3";
+    expr = "(~5 + 6) * 2";
     Transform t = Transform(expr);
     t.print_postfix(cout);
+    IPExpression ipexpr2(t.getOutput());
+   // std::cout << ipexpr2.evaluate() << endl;
     return 0;
 }

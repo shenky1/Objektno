@@ -20,24 +20,26 @@ Transform::Transform(string text){
 void Transform::init(string text){
     mText = text;
     mDelayOps = stack<Token>();
-    mOutput = list<Token>();
     mOperands = stack<Value>();
+    mOutput = Convert();
 }
 
 Transform::Token::Token(std::string str) {
     switch(str[0]){
         case '~':
             symbol = str[0];
-            priority = 3;
+            priority = 4;
             type = unaryOp;
             break;
         case '(':
             symbol = str[0];
             type = leftParen;
+            priority = 4;
             break;
         case ')':
             symbol = str[0];
             type = rightParen;
+            priority = 3;
             break;
         case '=':
             symbol = str[0];
@@ -102,7 +104,7 @@ list<Transform::Token> Transform::Convert(){
             output.push_back(t);
         }
         else if(t.getType()==rightParen){
-            while(mDelayOps.top().getType()!=leftParen){
+            while(!mDelayOps.empty() && mDelayOps.top().getType()!=leftParen){
                 output.push_back(mDelayOps.top());
                 mDelayOps.pop();
             }
@@ -112,9 +114,12 @@ list<Transform::Token> Transform::Convert(){
             mDelayOps.push(t);
         }
         else if(t.getPriority()<3){
-            while(mDelayOps.top().getPriority()>=t.getPriority()){
+            while(mDelayOps.size()!=0){
+                if(mDelayOps.top().getPriority()<=t.getPriority()){
                 output.push_back(mDelayOps.top());
                 mDelayOps.pop();
+                }
+                else break;
             }
             mDelayOps.push(t);
         }
@@ -122,19 +127,35 @@ list<Transform::Token> Transform::Convert(){
             mDelayOps.push(t);
         }
     }
-    while(mDelayOps.size()!=0){
+    while(!mDelayOps.empty()){
+        try {
+        if(mDelayOps.top().getType() == operand) cout << mDelayOps.top().getValue();
+        else cout << mDelayOps.top().getSymbol();
         output.push_back(mDelayOps.top());
         mDelayOps.pop();
+        } catch (exception e) {
+            cout << e.what();
+        }
     }
+    return output;
+}
 
+string Transform::getOutput(){
+    string output;
+    std::ostringstream ss;
+    for(list<Token>::iterator it = mOutput.begin(); it != mOutput.end(); ++it){
+        if(it->getType()==operand) { ss << it->getValue(); output.append(ss.str());
+        } else { ss << it->getSymbol(); output.append(ss.str());
+      } output.append(" ");
+    }
     return output;
 }
 
 void Transform::print_postfix(std::ostream & o){
-    list<Token> li = Convert();
-    cout << "printing PREORDER: ";
-    for(list<Token>::iterator it = li.begin(); it!=li.end(); ++it){
-        cout << it->getValue();
+    cout << "printing POSTORDER: ";
+    for(list<Token>::iterator it = mOutput.begin(); it!=mOutput.end(); ++it){
+        if(it->getType()==operand) cout << it->getValue();
+        else cout << it->getSymbol();
     }
     cout << endl;
 }
