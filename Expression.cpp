@@ -55,14 +55,26 @@ Expression::Value Expression::evaluate(){
    }
    else if(t.type() == binaryOp){
         int prvi = evaluate();
-        std::cout << prvi << std::endl;
+        std::cout << "prvi: " << prvi << std::endl;
         int drugi = evaluate();
-        std::cout << drugi << std::endl;
-        if(t.symbol() == '+') return prvi + drugi;
-        else if(t.symbol() == '-') return prvi - drugi;
-        else if(t.symbol() == '*') return prvi * drugi;
-        else if(t.symbol() == '/') if(drugi == 0) throw invalid_argument("Division by zero!"); else return prvi / drugi;
-        else return pow(prvi, drugi);
+        std::cout << "drugi: " << drugi << std::endl;
+        switch (t.symbol()){
+        case '+':
+            return prvi+drugi;
+            break;
+        case '-':
+            return prvi-drugi;
+            break;
+        case '*':
+            return prvi*drugi;
+            break;
+        case '/':
+            return prvi/drugi;
+            break;
+        default:
+            return pow(prvi, drugi);
+            break;
+        }
    } else {
       return t.value();
    }
