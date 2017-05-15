@@ -53,6 +53,8 @@ public:
     Value evaluate();
     std::string getText() {return mText;}
 
+    std::string ParseNext();
+
     // trim from start
     static inline std::string &ltrim(std::string &s);
     // trim from end

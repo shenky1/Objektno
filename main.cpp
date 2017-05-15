@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 {
     cout << "Prefix form evaluation ===============\n";
     checkPre("+ 2 3", 5);
-    checkPre("+ ~ 3 * ^ 3 - 3 1 2", 15);
+    checkPre("+~3*^3-3 1 2", 15);
     checkPre("~ * ^ 2 3 3 ", -24);
 
     cout << "Postfix form evaluation ===============\n";
@@ -41,9 +41,9 @@ int main(int argc, char *argv[])
     checkPost(" 3 12 11 - ^ ~ 4 1 + 7 * - 9 3 2 1 - ^ * +  ", -11);
 
     cout << "Infix form evaluation ===============\n";
-    checkTr("2 + 3 * ( 4 - 5 ) - 2 ^ 3", -9);
-    checkTr("3 ^ 2 - 4 * 7 + 9 * ( 3 - 1 )", -1);
-    checkTr("~ 3 ^ ( 12 - 11 ) - ( 4 + 1 ) * 7 + 9 * ( 3 ^ ( 2 - 1 ) )", -11);
+    checkTr("2 + 3*( 4- 5) - 2^3", -9);
+    checkTr("3^2-4*7+9*(3-1)", -1);
+    checkTr("~3^(12-11)-(4+1)*7+9*(3^(2-1))", -11);
 
     return 0;
 }

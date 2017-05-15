@@ -60,6 +60,9 @@ public:
 
     std::string getOutput();
 
+    std::string ParseNext();
+
+
 
 private:
     // Ulazni string sa infix izrazom

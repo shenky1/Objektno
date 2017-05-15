@@ -62,3 +62,66 @@
 	<locale>
 	"IPExpression.h"
 
+1494879235 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\expression.cpp
+	"Expression.h"
+	<sstream>
+	<iterator>
+	<iostream>
+	<string>
+	<math.h>
+	<stdexcept>
+	<algorithm>
+	<functional>
+	<cctype>
+	<locale>
+
+1494878361 c:\users\fspig\documents\visual studio 2015\projects\objektno\expression.h
+	<string>
+	<vector>
+	<istream>
+
+1494878489 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\ipexpression.cpp
+	"IPExpression.h"
+	<sstream>
+	<iterator>
+	<iostream>
+	<string>
+	<math.h>
+	<stdexcept>
+	<algorithm>
+	<functional>
+	<cctype>
+	<locale>
+
+1494878361 c:\users\fspig\documents\visual studio 2015\projects\objektno\ipexpression.h
+	<string>
+	<vector>
+	<istream>
+	<stack>
+
+1494878527 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\main.cpp
+	<iostream>
+	<string>
+	"Expression.h"
+	"IPExpression.h"
+	"Transform.h"
+
+1494878391 c:\users\fspig\documents\visual studio 2015\projects\objektno\transform.h
+	<string>
+	<stack>
+	<list>
+
+1494878489 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\transform.cpp
+	"Transform.h"
+	<sstream>
+	<iterator>
+	<iostream>
+	<string>
+	<math.h>
+	<stdexcept>
+	<algorithm>
+	<functional>
+	<cctype>
+	<locale>
+	"IPExpression.h"
+

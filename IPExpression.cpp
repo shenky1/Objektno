@@ -12,6 +12,29 @@
 
 using namespace std;
 
+string IPExpression::ParseNext(){
+    ltrim(mText);
+
+    string c;
+
+    if(mText.empty()) c = "";
+
+    if(!isdigit(mText[0])){
+        c = mText.substr(0, 1);
+        mText=mText.substr(1, mText.size());
+    }
+
+    else if(isdigit(mText[0])){
+        int i = 0;
+        while(i<=mText.size() && isdigit(mText[i])) ++i;
+        c = mText.substr(0, i);
+        if(i==mText.size()) mText="";
+        else mText=mText.substr(i, mText.size());
+    }
+    return c;
+}
+
+
 IPExpression::Token::Token(std::string str) {
     if(str.compare("+") == 0 || str.compare("-") == 0 || str.compare("*") == 0 || str.compare("/") == 0 || str.compare("^") == 0) {
         mtype = binaryOp;
@@ -28,19 +51,8 @@ IPExpression::Token::Token(std::string str) {
 }
 
 IPExpression::Token IPExpression::getToken() {
-    mText = IPExpression::trim(mText);
-    int spaceIndex = getText().find(' ');
-
-    if(spaceIndex != -1) {
-        std::string nextToken = getText().substr(0, spaceIndex);
-        mText = mText.substr(spaceIndex + 1, mText.size());
-        IPExpression::Token token(nextToken);
-        return token;
-    } else {
-        IPExpression::Token token(mText);
-        mText = "";
-        return token;
-    }
+    rtrim(mText);
+    return Token(ParseNext());
 }
 
 IPExpression::Value IPExpression::evaluate(){

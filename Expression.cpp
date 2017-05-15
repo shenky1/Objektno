@@ -12,6 +12,28 @@
 
 using namespace std;
 
+string Expression::ParseNext(){
+    ltrim(mText);
+
+    string c;
+
+    if(mText.empty()) c = "";
+
+    if(!isdigit(mText[0])){
+        c = mText.substr(0, 1);
+        mText=mText.substr(1, mText.size());
+    }
+
+    else if(isdigit(mText[0])){
+        int i = 0;
+        while(i<=mText.size() && isdigit(mText[i])) ++i;
+        c = mText.substr(0, i);
+        if(i==mText.size()) mText="";
+        else mText=mText.substr(i, mText.size());
+    }
+    return c;
+}
+
 Expression::Token::Token(std::string str) {
     if(str.compare("+") == 0 || str.compare("-") == 0 || str.compare("*") == 0 || str.compare("/") == 0 || str.compare("^") == 0) {
         mtype = binaryOp;
@@ -28,19 +50,8 @@ Expression::Token::Token(std::string str) {
 }
 
 Expression::Token Expression::getToken() {
-    mText = Expression::trim(mText);
-    int spaceIndex = getText().find(' ');
-
-    if(spaceIndex != -1) {
-        std::string nextToken = getText().substr(0, spaceIndex);
-        mText = mText.substr(spaceIndex + 1, mText.size());
-        Expression::Token token(nextToken);
-        return token;
-    } else {
-        Expression::Token token(mText);
-        mText = "";
-        return token;
-    }
+    rtrim(mText);
+    return Token(ParseNext());
 }
 
 Expression::Value Expression::evaluate(){
