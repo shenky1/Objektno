@@ -80,7 +80,7 @@
 	<vector>
 	<istream>
 
-1494878489 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\ipexpression.cpp
+1494879270 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\ipexpression.cpp
 	"IPExpression.h"
 	<sstream>
 	<iterator>
@@ -111,7 +111,7 @@
 	<stack>
 	<list>
 
-1494878489 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\transform.cpp
+1494879270 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\transform.cpp
 	"Transform.h"
 	<sstream>
 	<iterator>
@@ -124,4 +124,23 @@
 	<cctype>
 	<locale>
 	"IPExpression.h"
+
+1494883016 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\ip_to_fp.cpp
+	"IP_to_FP.h"
+	<sstream>
+	<iterator>
+	<iostream>
+	<string>
+	<math.h>
+	<stdexcept>
+	<algorithm>
+	<functional>
+	<cctype>
+	<locale>
+
+1494882949 c:\users\fspig\documents\visual studio 2015\projects\objektno\ip_to_fp.h
+	<string>
+	<vector>
+	<istream>
+	<stack>
 

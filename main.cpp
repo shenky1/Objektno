@@ -4,6 +4,7 @@
 #include "Expression.h"
 #include "IPExpression.h"
 #include "Transform.h"
+#include "IP_to_FP.h"
 
 using namespace std;
 
@@ -39,6 +40,9 @@ int main(int argc, char *argv[])
     checkPost("3 2 ^ 4 7 * - 9 3 1 - * +", -1);
     checkPost("2 3 4 5 - * + 2 3 ^ -", -9);
     checkPost(" 3 12 11 - ^ ~ 4 1 + 7 * - 9 3 2 1 - ^ * +  ", -11);
+
+    IP_to_FP test("3 2 4 * 1 - +");
+    test.Convert();
 
     cout << "Infix form evaluation ===============\n";
     checkTr("2 + 3*( 4- 5) - 2^3", -9);
