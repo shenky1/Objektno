@@ -21,7 +21,7 @@
 	<iostream>
 	"Expression.h"
 
-1494364066 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\expression.cpp
+1494875825 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\expression.cpp
 	"Expression.h"
 	<sstream>
 	<iterator>
@@ -34,18 +34,18 @@
 	<cctype>
 	<locale>
 
-1494359085 c:\users\fspig\documents\visual studio 2015\projects\objektno\expression.h
+1494875825 c:\users\fspig\documents\visual studio 2015\projects\objektno\expression.h
 	<string>
 	<vector>
 	<istream>
 
-1494372983 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\main.cpp
+1494875825 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\main.cpp
 	<iostream>
 	"Expression.h"
 	"IPExpression.h"
 	"Transform.h"
 
-1494365802 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\ipexpression.cpp
+1494875825 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\ipexpression.cpp
 	"IPExpression.h"
 	<sstream>
 	<iterator>
@@ -58,13 +58,13 @@
 	<cctype>
 	<locale>
 
-1494364657 c:\users\fspig\documents\visual studio 2015\projects\objektno\ipexpression.h
+1494875825 c:\users\fspig\documents\visual studio 2015\projects\objektno\ipexpression.h
 	<string>
 	<vector>
 	<istream>
 	<stack>
 
-1494373009 c:\users\fspig\documents\visual studio 2015\projects\objektno\transform.h
+1494875825 c:\users\fspig\documents\visual studio 2015\projects\objektno\transform.h
 	<string>
 	<stack>
 	<list>
@@ -118,6 +118,19 @@
 	<list>
 
 1494431606 source:c:\users\fspigel\desktop\cb stuff\temp obj zad\objektno\transform.cpp
+	"Transform.h"
+	<sstream>
+	<iterator>
+	<iostream>
+	<string>
+	<math.h>
+	<stdexcept>
+	<algorithm>
+	<functional>
+	<cctype>
+	<locale>
+
+1494875825 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\transform.cpp
 	"Transform.h"
 	<sstream>
 	<iterator>
