@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1494268663 source:c:\users\matija\cpp\aritmeticki izrazi\expression.cpp
+1494429913 source:/.home/student1/maselen/aritmeticki izrazi/Expression.cpp
 	"Expression.h"
 	<sstream>
 	<iterator>
@@ -12,40 +12,12 @@
 	<cctype>
 	<locale>
 
-1494267299 c:\users\matija\cpp\aritmeticki izrazi\expression.h
+1494428231 /.home/student1/maselen/aritmeticki izrazi/Expression.h
 	<string>
 	<vector>
 	<istream>
 
-1494268798 source:c:\users\matija\cpp\aritmeticki izrazi\main.cpp
-	<iostream>
-	"Expression.h"
-
-1494875825 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\expression.cpp
-	"Expression.h"
-	<sstream>
-	<iterator>
-	<iostream>
-	<string>
-	<math.h>
-	<stdexcept>
-	<algorithm>
-	<functional>
-	<cctype>
-	<locale>
-
-1494875825 c:\users\fspig\documents\visual studio 2015\projects\objektno\expression.h
-	<string>
-	<vector>
-	<istream>
-
-1494875825 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\main.cpp
-	<iostream>
-	"Expression.h"
-	"IPExpression.h"
-	"Transform.h"
-
-1494875825 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\ipexpression.cpp
+1494429919 source:/.home/student1/maselen/aritmeticki izrazi/IPExpression.cpp
 	"IPExpression.h"
 	<sstream>
 	<iterator>
@@ -58,19 +30,26 @@
 	<cctype>
 	<locale>
 
-1494875825 c:\users\fspig\documents\visual studio 2015\projects\objektno\ipexpression.h
+1494428231 /.home/student1/maselen/aritmeticki izrazi/IPExpression.h
 	<string>
 	<vector>
 	<istream>
 	<stack>
 
-1494875825 c:\users\fspig\documents\visual studio 2015\projects\objektno\transform.h
+1494430858 source:/.home/student1/maselen/aritmeticki izrazi/main.cpp
+	<iostream>
+	<string>
+	"Expression.h"
+	"IPExpression.h"
+	"Transform.h"
+
+1494430732 /.home/student1/maselen/aritmeticki izrazi/Transform.h
 	<string>
 	<stack>
 	<list>
 
-1494422973 source:c:\users\fspigel\desktop\cb stuff\temp obj zad\objektno\expression.cpp
-	"Expression.h"
+1494430783 source:/.home/student1/maselen/aritmeticki izrazi/Transform.cpp
+	"Transform.h"
 	<sstream>
 	<iterator>
 	<iostream>
@@ -81,65 +60,5 @@
 	<functional>
 	<cctype>
 	<locale>
-
-1494422973 c:\users\fspigel\desktop\cb stuff\temp obj zad\objektno\expression.h
-	<string>
-	<vector>
-	<istream>
-
-1494422973 source:c:\users\fspigel\desktop\cb stuff\temp obj zad\objektno\ipexpression.cpp
 	"IPExpression.h"
-	<sstream>
-	<iterator>
-	<iostream>
-	<string>
-	<math.h>
-	<stdexcept>
-	<algorithm>
-	<functional>
-	<cctype>
-	<locale>
-
-1494422973 c:\users\fspigel\desktop\cb stuff\temp obj zad\objektno\ipexpression.h
-	<string>
-	<vector>
-	<istream>
-	<stack>
-
-1494431673 source:c:\users\fspigel\desktop\cb stuff\temp obj zad\objektno\main.cpp
-	<iostream>
-	"Expression.h"
-	"IPExpression.h"
-	"Transform.h"
-
-1494431344 c:\users\fspigel\desktop\cb stuff\temp obj zad\objektno\transform.h
-	<string>
-	<stack>
-	<list>
-
-1494431606 source:c:\users\fspigel\desktop\cb stuff\temp obj zad\objektno\transform.cpp
-	"Transform.h"
-	<sstream>
-	<iterator>
-	<iostream>
-	<string>
-	<math.h>
-	<stdexcept>
-	<algorithm>
-	<functional>
-	<cctype>
-	<locale>
-
-1494875825 source:c:\users\fspig\documents\visual studio 2015\projects\objektno\transform.cpp
-	"Transform.h"
-	<sstream>
-	<iterator>
-	<iostream>
-	<string>
-	<math.h>
-	<stdexcept>
-	<algorithm>
-	<functional>
-	<cctype>
-	<locale>
 

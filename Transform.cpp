@@ -9,7 +9,7 @@
 #include <functional>
 #include <cctype>
 #include <locale>
-
+#include "IPExpression.h"
 
 using namespace std;
 
@@ -115,7 +115,7 @@ list<Transform::Token> Transform::Convert(){
         }
         else if(t.getPriority()<3){
             while(mDelayOps.size()!=0){
-                if(mDelayOps.top().getPriority()<=t.getPriority()){
+                if(mDelayOps.top().getPriority()>=t.getPriority() && mDelayOps.top().getType()!=leftParen){
                 output.push_back(mDelayOps.top());
                 mDelayOps.pop();
                 }
@@ -126,18 +126,10 @@ list<Transform::Token> Transform::Convert(){
         else if(t.getPriority()==3){
             mDelayOps.push(t);
         }
-
-    printTokens(output);
     }
     while(!mDelayOps.empty()){
-        try {
-        if(mDelayOps.top().getType() == operand) cout << mDelayOps.top().getValue();
-        else cout << mDelayOps.top().getSymbol();
         output.push_back(mDelayOps.top());
         mDelayOps.pop();
-        } catch (exception e) {
-            cout << e.what();
-        }
     }
     return output;
 }
@@ -146,20 +138,21 @@ string Transform::getOutput(){
     string output;
     std::ostringstream ss;
     for(list<Token>::iterator it = mOutput.begin(); it != mOutput.end(); ++it){
-        if(it->getType()==operand) { ss << it->getValue(); output.append(ss.str());
-        } else { ss << it->getSymbol(); output.append(ss.str());
-      } output.append(" ");
+        if(it->getType()==operand) { ss << it->getValue() <<" ";
+        } else { ss << it->getSymbol() << " ";
+      }
     }
+    output.append(ss.str());
     return output;
 }
 
 void Transform::print_postfix(std::ostream & o){
-    o << "printing POSTORDER: ";
+    o << endl << "printing POSTORDER: ";
     for(list<Token>::iterator it = mOutput.begin(); it!=mOutput.end(); ++it){
         if(it->getType()==operand) o << it->getValue();
         else o << it->getSymbol();
     }
-    cout << endl;
+    o << endl;
 }
 
 void Transform::printTokens(list<Token> li){
@@ -168,6 +161,11 @@ void Transform::printTokens(list<Token> li){
         if(it->getType()==operand) cout << it->getValue();
         else cout << it->getSymbol();
     }
+}
+
+int Transform::evaluate() {
+    IPExpression expr(getOutput());
+    return expr.evaluate();
 }
 
 // trim from start

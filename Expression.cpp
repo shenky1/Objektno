@@ -34,7 +34,6 @@ Expression::Token Expression::getToken() {
     if(spaceIndex != -1) {
         std::string nextToken = getText().substr(0, spaceIndex);
         mText = mText.substr(spaceIndex + 1, mText.size());
-        std::cout << mText << std::endl;
         Expression::Token token(nextToken);
         return token;
     } else {
@@ -55,9 +54,7 @@ Expression::Value Expression::evaluate(){
    }
    else if(t.type() == binaryOp){
         int prvi = evaluate();
-        std::cout << "prvi: " << prvi << std::endl;
         int drugi = evaluate();
-        std::cout << "drugi: " << drugi << std::endl;
         switch (t.symbol()){
         case '+':
             return prvi+drugi;

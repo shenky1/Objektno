@@ -34,7 +34,6 @@ IPExpression::Token IPExpression::getToken() {
     if(spaceIndex != -1) {
         std::string nextToken = getText().substr(0, spaceIndex);
         mText = mText.substr(spaceIndex + 1, mText.size());
-        std::cout << mText << std::endl;
         IPExpression::Token token(nextToken);
         return token;
     } else {
